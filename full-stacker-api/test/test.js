@@ -2,12 +2,11 @@ import test from 'ava';
 import superKoa from 'superkoa';
 import app from '../app';
 
-test.cb("first test", t => {
+test.cb("Hello full stacker", t => {
     superKoa(app)
-        .get("/users/")
+        .get("/")
         .expect(200, function (err, res) {
-            const user = JSON.parse(res.text);
-            t.is(user.age, 23);
+            t.is(res.text, 'Hello full stacker!');
             t.end();
         });
 });

@@ -6,6 +6,7 @@ const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser');
 const logger = require('koa-logger');
 const mount = require('mount-koa-routes');
+require('./config/mongo-db');
 
 // error handler
 onerror(app);
